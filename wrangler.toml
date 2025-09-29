@@ -1,0 +1,10 @@
+name = "interview-worker"
+main = "src/index.ts"
+compatibility_date = "2025-09-28"
+
+[vars]
+# Lock down CORS in prod later; for local dev you can leave "*"
+ALLOWED_ORIGIN = "*"
+
+[observability]
+enabled = true
