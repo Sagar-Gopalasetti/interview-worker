@@ -53,7 +53,7 @@ type InterviewPrepRequest = {
   resume: string;
   job_description: string;
   interviewer_role: string;
-  interviewer_profile: string;
+  interviewer_profile?: string;
   interview_duration: number;
   interview_description: string;
   model_name: string;
@@ -65,7 +65,7 @@ type InterviewSimulationRequest = {
   job_description: string;
   interview_type: string;
   interviewer_role: string;
-  interviewer_profile: string;
+  interviewer_profile?: string;
   interview_duration: number;
   interview_description: string;
   model_name: string;
@@ -906,7 +906,6 @@ export default {
           "job_description",
           "model_name",
           "interviewer_role",
-          "interviewer_profile",
           "interview_duration",
           "interview_description",
         ]); // user_custom_prompt optional
@@ -915,7 +914,7 @@ export default {
           resume: body.resume,
           job_description: body.job_description,
           interviewer_role: body.interviewer_role,
-          interviewer_profile: body.interviewer_profile,
+          interviewer_profile: body.interviewer_profile || "(none)",
           interview_duration: body.interview_duration,
           interview_description: body.interview_description,
           user_custom_prompt: body.user_custom_prompt || "(none)",
@@ -947,7 +946,6 @@ export default {
           "job_description",
           "interview_type",
           "interviewer_role",
-          "interviewer_profile",
           "interview_duration",
           "interview_description",
           "model_name",
@@ -958,7 +956,7 @@ export default {
           job_description: body.job_description,
           interview_type: body.interview_type,
           interviewer_role: body.interviewer_role,
-          interviewer_profile: body.interviewer_profile,
+          interviewer_profile: body.interviewer_profile || "(none)",
           interview_duration: body.interview_duration,
           interview_description: body.interview_description,
           user_custom_prompt: body.user_custom_prompt || "(none)",
